@@ -9,19 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var validation_component_1 = require('./validation/validation.component');
-var AppComponent = (function () {
-    function AppComponent() {
+var primeng_1 = require('primeng/primeng');
+var ValidationComponent = (function () {
+    function ValidationComponent() {
     }
-    AppComponent = __decorate([
+    ValidationComponent.prototype.checkLogin = function (event) {
+        console.log(this.username + " " + this.password);
+    };
+    ValidationComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: "app/app.component.html",
-            directives: [validation_component_1.ValidationComponent]
+            selector: "validationForm",
+            templateUrl: "app/validation/validation.component.html",
+            styleUrls: ["app/validation/validation.component.css"],
+            directives: [primeng_1.Panel, primeng_1.InputText, primeng_1.Button]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ValidationComponent);
+    return ValidationComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ValidationComponent = ValidationComponent;
+//# sourceMappingURL=validation.component.js.map
